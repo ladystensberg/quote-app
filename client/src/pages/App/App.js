@@ -1,9 +1,10 @@
 import React, { Component } from 'react';
 import './App.css';
 import QuoteBox from '../../components/QuoteBox/QuoteBox';
+import QuoteActionButtons from '../../components/QuoteActionButtons/QuoteActionButtons';
 
 let quote = {
-	quote: 'Not all who wander are lost',
+	content: 'Not all who wander are lost',
 	author: 'J.R.R Tolkien'
 }
 
@@ -33,7 +34,8 @@ class App extends Component {
 
 		return (
 			<div className="App">
-				<QuoteBox color={this.state.testColor} quote={this.state.testQuote} getQuote={this.componentDidMount} />
+				<QuoteBox color={this.state.testColor} quote={this.state.testQuote} />
+				<QuoteActionButtons getQuote={this.componentDidMount} />
 			</div>
 		);
 	}

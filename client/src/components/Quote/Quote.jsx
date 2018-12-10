@@ -1,10 +1,10 @@
 import React from 'react';
 import './Quote.css';
 
-const Quote = (props) => (
+const Quote = ({ quote }) => (
 	<div className="Quote">
-		<p>{props.quote.quote}</p>
-		<p><strong>-- {props.quote.author}</strong></p>
+		<p>{quote.content}</p>
+		<p><strong>-- {quote.author}</strong></p>
 	</div>
 )
 
