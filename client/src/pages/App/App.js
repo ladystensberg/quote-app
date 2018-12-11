@@ -44,8 +44,9 @@ class App extends Component {
 	}
 
 	getRandomQuote = () => {
+		this.getRGBValue();
 		let quotes = this.state.quotes;
-		let randomValue = Math.floor(Math.random() * (quotes.length - 0 + 1)) + 0;
+		let randomValue = Math.floor(Math.random() * (quotes.length - 1));
 		let randomQuote = quotes[randomValue];
 		return this.setState({
 			currentQuote: randomQuote
@@ -68,8 +69,8 @@ class App extends Component {
 	render() {
 
 		return (
-			<div className="App">
-				<QuoteBox color={this.state.quoteColor} quote={this.state.currentQuote} />
+			<div className="App" style={{ backgroundColor: this.state.quoteColor }}>
+				<QuoteBox quote={this.state.currentQuote} />
 				<QuoteActionButtons changeColor={this.getRGBValue} changeQuote={this.getRandomQuote} />
 			</div>
 		);

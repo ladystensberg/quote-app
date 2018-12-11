@@ -1,7 +1,8 @@
 .QuoteBox {
-	background-color: rebeccapurple;
+	background-color: white;
 	height: 50vh;
 	width: 50vw;
+	border-radius: 6px;
 	text-align: center;
 	display: flex;
 	align-items: center;
