@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-class GetColorButton extends Component {
+class AddFavoriteButton extends Component {
 	constructor(props) {
 		super(props)
 		this.state = {
@@ -26,13 +26,13 @@ class GetColorButton extends Component {
 				onMouseOver={() => this.onMouseOver()}
 				onMouseOut={() => this.onMouseOut()}
 				style={{ backgroundColor: this.state.hover ? this.props.color : "white", color: this.state.hover ? 'white' : this.props.color }}
-				onClick={this.props.changeColor}
-				className="GetColorButton"
+				// onClick={this.props.changeQuote}
+				className="AddFavoriteButton"
 			>
-				Change Color
+				Add to Favorites
 			</button>
 		)
 	}
 }
 
-export default GetColorButton;
+export default AddFavoriteButton;

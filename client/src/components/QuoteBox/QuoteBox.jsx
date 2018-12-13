@@ -4,7 +4,7 @@ import './QuoteBox.css';
 
 const QuoteBox = (props) => (
 	<div className="QuoteBox">
-		<Quote quote={props.quote} />
+		<Quote color={props.color} quote={props.quote} />
 	</div>
 )
 

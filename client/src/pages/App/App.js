@@ -62,7 +62,7 @@ class App extends Component {
 		let g = this.getRandomColor();
 		let b = this.getRandomColor();
 		return this.setState({
-			quoteColor: `rgb(${r}, ${g}, ${b}, 1)`
+			quoteColor: `rgb(${r}, ${g}, ${b})`
 		})
 	}
 
@@ -70,8 +70,8 @@ class App extends Component {
 
 		return (
 			<div className="App" style={{ backgroundColor: this.state.quoteColor }}>
-				<QuoteBox quote={this.state.currentQuote} />
-				<QuoteActionButtons changeColor={this.getRGBValue} changeQuote={this.getRandomQuote} />
+				<QuoteBox quote={this.state.currentQuote} color={this.state.quoteColor} />
+				<QuoteActionButtons color={this.state.quoteColor} changeColor={this.getRGBValue} changeQuote={this.getRandomQuote} />
 			</div>
 		);
 	}
