@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 
 class LoginButton extends Component {
 	constructor(props) {
@@ -22,14 +23,13 @@ class LoginButton extends Component {
 
 	render() {
 		return (
-			<button
+			<Link to="/login"
 				onMouseOver={() => this.onMouseOver()}
 				onMouseOut={() => this.onMouseOut()}
 				style={{ backgroundColor: this.state.hover ? this.props.color : "white", color: this.state.hover ? 'white' : this.props.color }}
-				className="LoginButton"
-			>
+				className="LoginButton ButtonLinks">
 				Login
-			</button>
+			</Link>
 		)
 	}
 }

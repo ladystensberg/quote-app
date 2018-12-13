@@ -1,7 +1,14 @@
 import React, { Component } from 'react';
+import {
+	BrowserRouter as Router,
+	Switch,
+	Route,
+	Link
+} from 'react-router-dom';
 import './App.css';
-import QuoteBox from '../../components/QuoteBox/QuoteBox';
-import QuoteActionButtons from '../../components/QuoteActionButtons/QuoteActionButtons';
+import HomePage from '../HomePage/HomePage';
+import LoginPage from '../LoginPage/LoginPage';
+import SignupPage from '../SignupPage/SignupPage';
 import Header from '../../components/Header/Header';
 
 let quotes = [
@@ -70,12 +77,27 @@ class App extends Component {
 	render() {
 
 		return (
-			<div className="App" style={{ backgroundColor: this.state.quoteColor }}>
-				<Header color={this.state.quoteColor} />
-				<div className="Main">
-					<QuoteBox quote={this.state.currentQuote} color={this.state.quoteColor} />
-					<QuoteActionButtons color={this.state.quoteColor} changeColor={this.getRGBValue} changeQuote={this.getRandomQuote} />
-				</div>
+			<div className="App">
+				<Router>
+					<div>
+						<Header color={this.state.quoteColor} />
+						<Switch>
+							<Route exact path="/" render={() =>
+								<HomePage
+									color={this.state.quoteColor}
+									changeColor={this.getRGBValue}
+									changeQuote={this.getRandomQuote}
+									quote={this.state.currentQuote}
+								/>} />
+							<Route exact path="/login" render={() =>
+								<LoginPage
+									color={this.state.quoteColor}
+								/>} />
+							<Route path="/signup" render={() =>
+								<SignupPage color={this.state.quoteColor} />} />
+						</Switch>
+					</div>
+				</Router>
 			</div>
 		);
 	}

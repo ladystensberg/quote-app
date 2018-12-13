@@ -14,7 +14,7 @@ h1 {
 	font-family: 'Pacifico', cursive;
 }
 
-button {
+button, .ButtonLinks {
 	font-size: 2vh;
 	letter-spacing: 4px;
 	font-family: 'Josefin Slab', serif;
@@ -22,8 +22,15 @@ button {
 	border-radius: 2px;
 	padding: 20px;
 	font-weight: 700;
+	text-decoration: none;
+	text-align: center;
 }
 
 button:focus {
 	outline:0;
+}
+
+a {
+	text-decoration: none;
+	color: inherit;
 }
