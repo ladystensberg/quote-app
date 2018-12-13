@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import './App.css';
 import QuoteBox from '../../components/QuoteBox/QuoteBox';
 import QuoteActionButtons from '../../components/QuoteActionButtons/QuoteActionButtons';
+import Header from '../../components/Header/Header';
 
 let quotes = [
 	{
@@ -46,7 +47,7 @@ class App extends Component {
 	getRandomQuote = () => {
 		this.getRGBValue();
 		let quotes = this.state.quotes;
-		let randomValue = Math.floor(Math.random() * (quotes.length - 1));
+		let randomValue = Math.floor(Math.random() * (quotes.length));
 		let randomQuote = quotes[randomValue];
 		return this.setState({
 			currentQuote: randomQuote
@@ -70,8 +71,11 @@ class App extends Component {
 
 		return (
 			<div className="App" style={{ backgroundColor: this.state.quoteColor }}>
-				<QuoteBox quote={this.state.currentQuote} color={this.state.quoteColor} />
-				<QuoteActionButtons color={this.state.quoteColor} changeColor={this.getRGBValue} changeQuote={this.getRandomQuote} />
+				<Header color={this.state.quoteColor} />
+				<div className="Main">
+					<QuoteBox quote={this.state.currentQuote} color={this.state.quoteColor} />
+					<QuoteActionButtons color={this.state.quoteColor} changeColor={this.getRGBValue} changeQuote={this.getRandomQuote} />
+				</div>
 			</div>
 		);
 	}
